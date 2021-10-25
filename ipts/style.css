@@ -6,69 +6,139 @@ html{
 }
 .page-header{
     height: 80%;
-    width: 100%;
+    width: 90%;
+
+}
+.navbar{
+  /* box-sizing: border-box; */
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #333;
+  color:white;
+  font-family: EB Garamond;
+  font-size: 2.5rem;
+  /* width: 100%; */
+}
+.ipts1{
+  font-size:1.5rem;
+  margin:.5rem;
+}
+.navbar-links ul{
+  margin: 0;
+  padding: 0;
+  display: flex;
+}
+.navbar-links li{
+  list-style:none;
+
+}
+.navbar-links li a{
+  text-decoration: none;
+  color:white;
+  padding: 1rem;
+  display:block;
+  /* width: 20%; */
+}
+.navbar-links li:hover{
+  /* background-color: rgb(245, 239, 239); */
+}
+.toggle-button{
+  position: absolute;
+  top: .75rem;
+  right: 1rem;
+  display: none;
+  flex-direction: column;
+  justify-content: space-between;
+  width: 3.0rem;
+  height: 2.8rem;
+  padding-top: 3%;
+}
+.toggle-button .bar {
+  height: .3rem;
+  width: 100%;
+  background-color: white;
+  border-radius: 1rem;
+}
+@media (max-width: 1000px)
+{
+  .toggle-button{
+      display: flex;
+  }
+  .navbar-links{
+      display:none;
+      width: 100%;
+  }
+  .navbar{
+      flex-direction: column;
+      align-items: flex-start;
+  }
+  .navbar-links ul{
+      width: 100%;
+      flex-direction: column;
+  }
+  .navbar-links li{
+      text-align: center;
+  }
+  .navbar-links li a{
+      padding: .5rem 1rem;
+  }
+  .navbar-links.active{
+      display: flex;
+  }
 }
 @media screen and (min-width: 42em) and (max-width: 64em){
 .page-header{
-    padding: 3rem 4 rem;
+    padding: 3rem 4rem;
 }}
 .page-header {
+  padding: 5%;
+  /* padding-right: 10%; */
     font-size: 3.5rem;
     font-family: Acme;
     height: 52.0rem;
+    width: 100%;
     color: #fff;
     text-align: center;
     background-color: #159957;
     background-image: linear-gradient(
 120deg, #155799, #159957);
 }
-.project-name{
-    padding: auto;
-    animation: text 3s 1;
+.project-name, .project-name2, .project-name3, .btn{
+   animation: fadeInAnimation ease 3s;
+   animation-iteration-count: 1;
+   animation-fill-mode: forwards;
+   /* margin-right: 13rem; */
 }
-.project-name2{
-    animation: text 3s 1;
+
+@keyframes fadeInAnimation{
+  0%{
+    opacity: 0;
+  }
+  100%{
+    opacity: 1;
+  }
 }
-.project-name3{
-    animation: text 3s 1;
-}
-a{
+.page-header a{
     text-decoration: none;
-    margin-left: 1.0rem;
-    margin-right: 1.0rem;
+    /* margin-left: 1.0rem; */
+    /* margin-right: 13.0rem; */
     color: white;
     /* margin-top: 100px; */
     font-family: Cooper ;
     font-size: 2.5rem;
     padding: 1.2rem;
+    text-align: center;
   }
-  a:hover{
+  .page-header a:hover{
     border: .1rem solid white;
     border-radius: 4.0rem;
     background: white;
     color: rgb(29, 29, 80);
   }
-  @keyframes text{
-    0%{
-      color: rgb(238, 240, 232);
-      margin-bottom: 4.0rem;
-    }
-    85%{
-      letter-spacing: .8rem;
-      margin-bottom: 4.0rem;
-    }
-    30%{
-      letter-spacing: 1.5rem;
-      margin-bottom: 4.0rem;
-    }
-  }
+ 
 
-.navigation-menu{
-  background: white;
-  height: 0%;
-  width: 100%;
-  margin-top: 10.0rem;
-}
+
 
 
 .about-us hr{
@@ -126,10 +196,15 @@ a{
   display: flex;
 }
 .content1 > div{
-  border: .1rem solid white;
+  border: .3rem solid rgb(121, 193, 235);
   padding: 5%;
 }
-
+ .content5, .content6{
+   /* height: 80%; */
+   border: .2rem solid rgb(99, 161, 233);
+   border-radius: 2.0rem;
+   filter: drop-shadow(.5rem .5rem 1.3rem black);
+ }
 
 .outer-container{
   display: flex;
@@ -144,14 +219,16 @@ a{
   height: 100%;
   width: 100%;
   padding-bottom: 5%;
+  padding-left: 5%;
   filter: grayscale(100%);
 }
 .content4{
+  width: 48%;
   display: none;
   visibility: hidden;
   text-align: center;
   /* padding: auto; */
-  font-size: 2rem;
+  font-size: 1.5rem;
   font-weight: 500;
   color: white;
 }
@@ -159,6 +236,7 @@ a{
   border: .5rem solid white;
   border-radius: 50% ;
   filter: grayscale(0%);
+  filter: drop-shadow(1rem 1rem 2pprem black);
 }
  .member:hover > .content4{
   display: inline-block;
@@ -248,7 +326,9 @@ height: 100%;
   text-transform:capitalize;
 }
 
-
+.content4{
+  padding: 5%;
+}
 @media only screen and (max-width: 990px){
   .our-team{ margin-bottom: 30px; }
 }
@@ -274,7 +354,7 @@ height: 100%;
   .about-us h1, .details h1, .event-coordinator h1, .our-team-section h1{
     font-size: 2rem;
   }
-  .content, .content1 > div{
+  .content, .content1 > div, .content4{
     font-size: 1.5rem;
   }
   .about-us hr, .details hr, .event-coordinator hr, .our-team-section hr{
@@ -309,4 +389,232 @@ height: 100%;
    }
    
  }
+ @media screen and (min-width: 800px) {
+  .project-name{
+    padding: auto;
+    animation: text 3s 1;
+}
+.project-name2{
+    animation: text 3s 1;
+}
+.project-name3{
+    animation: text 3s 1;
+}
+@keyframes text{
+  0%{
+    color: rgb(238, 240, 232);
+    margin-bottom: 4.0rem;
+  }
+  85%{
+    letter-spacing: .8rem;
+    margin-bottom: 4.0rem;
+  }
+  30%{
+    letter-spacing: 1.5rem;
+    margin-bottom: 4.0rem;
+  }
+}
+ }
+.content5:hover{
+  animation: slide 1s linear 1;
+  height: 100% ;
+} 
+.content6:hover{
+  animation: slide 1s linear 1;
+  height: 100%;
+}
+@keyframes slide{
+    0%{
+      opacity: 0;
+    }
+    100%{
+      opacity: 1;
+    }
+}
+.im1{
+  height: 15%;
+  width: 15%;
+}
+.im2{
+  height: 10%;
+  width: 10%;
+}
+@media screen and (min-width: 500px) and (max-width : 1000px) {
+  .im1{
+    height: 10%;
+    width: 10%;
+  }
+  .im2{
+    height: 7%;
+    width: 7%;
+  }
+}
+/* ---footer---- */
+#footer {
+  background: #101522;
+  padding: 0 0 25px 0;
+  color: #eee;
+  font-size: 14px;
+}
+
+#footer .footer-top {
+  background: #040919;
+  padding: 60px 0 30px 0;
+}
+
+#footer .footer-top .footer-info {
+  margin-bottom: 30px;
+}
+
+#footer .footer-top .footer-info h3 {
+  font-size: 26px;
+  margin: 0 0 20px 0;
+  padding: 2px 0 2px 0;
+  line-height: 1;
+  font-family: "Raleway", sans-serif;
+  font-weight: 700;
+  color: #fff;
+}
+
+#footer .footer-top .footer-info img {
+  height: 55px;
+  margin-bottom: 10px;
+}
  
+
+#footer .footer-top .footer-info p {
+  font-size: 14px;
+  line-height: 24px;
+  margin-bottom: 0;
+  font-family: "Raleway", sans-serif;
+  color: #fff;
+}
+
+#footer .footer-top .social-links a {
+  font-size: 18px;
+  display: inline-block;
+  background: #222636;
+  color: #eee;
+  line-height: 1;
+  padding: 8px 0;
+  margin-right: 4px;
+  border-radius: 50%;
+  text-align: center;
+  width: 36px;
+  height: 36px;
+  transition: 0.3s;
+}
+
+#footer .footer-top .social-links a:hover {
+  background: #f82249;
+  color: #fff;
+}
+
+#footer .footer-top h4 {
+  font-size: 14px;
+  font-weight: bold;
+  color: #fff;
+  text-transform: uppercase;
+  position: relative;
+  padding-bottom: 12px;
+  border-bottom: 2px solid #f82249;
+}
+
+#footer .footer-top .footer-links {
+  margin-bottom: 30px;
+}
+
+#footer .footer-top .footer-links ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+#footer .footer-top .footer-links ul i {
+  padding-right: 5px;
+  color: #f82249;
+  font-size: 18px;
+}
+
+#footer .footer-top .footer-links ul li {
+  border-bottom: 1px solid #262c44;
+  padding: 10px 0;
+}
+
+#footer .footer-top .footer-links ul li:first-child {
+  padding-top: 0;
+}
+
+#footer .footer-top .footer-links ul a {
+  color: #eee;
+}
+
+#footer .footer-top .footer-links ul a:hover {
+  color: #f82249;
+}
+
+#footer .footer-top .footer-contact {
+  margin-bottom: 30px;
+}
+
+#footer .footer-top .footer-contact p {
+  line-height: 26px;
+}
+
+#footer .footer-top .footer-newsletter {
+  margin-bottom: 30px;
+}
+
+#footer .footer-top .footer-newsletter input[type="email"] {
+  border: 0;
+  padding: 6px 8px;
+  width: 65%;
+}
+
+#footer .footer-top .footer-newsletter input[type="submit"] {
+  background: #f82249;
+  border: 0;
+  width: 35%;
+  padding: 6px 0;
+  text-align: center;
+  color: #fff;
+  transition: 0.3s;
+  cursor: pointer;
+}
+
+#footer .footer-top .footer-newsletter input[type="submit"]:hover {
+  background: #e0072f;
+}
+
+#footer .copyright {
+  text-align: center;
+  padding-top: 30px;
+}
+
+#footer .credits {
+  text-align: center;
+  font-size: 13px;
+  color: #ddd;
+}
+
+#footer p {
+    font-size: 14px;
+}
+.row{
+  display: flex;
+}
+.footer-info{
+  width: 55%;
+}
+.footer-links, .footer-contact{
+  width: 25%;
+}
+@media screen and (max-width : 1000px) {
+  .row{
+    display: flex;
+    flex-direction: column;
+  }
+   .footer-info, .footer-links, .footer-contact{
+     width: 100%;
+   }
+}

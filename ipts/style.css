@@ -142,14 +142,18 @@ html{
   }
   @keyframes slidein {
     from {
-      transform: translateX(0%);
+      transform: translateY(30%);
     }
     to{
-      transform: translateX(5%);
+      transform: translateY(0%);
     }
   }
 
-
+#about:hover, .about-us:active{
+  animation: slidein;
+  animation-timing-function: ease-out;
+  animation-duration: 5s;
+}
 
 .about-us hr{
   align-items: center;
@@ -498,7 +502,7 @@ details summary{
   height: 100% ;
 } 
 .content1:active{
-  animation: fadeInAnimation 3s  1;
+  animation: slidein 3s  1;
   height: 100%;
   animation-timing-function: ease-in;
 }

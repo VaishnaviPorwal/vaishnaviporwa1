@@ -149,12 +149,6 @@ html{
     }
   }
 
-  .content1{
-    animation: slidein;
-    animation-duration: 4s;
-    animation-fill-mode: forwards;
-    animation-timing-function: linear;
-  }
 
 
 .about-us hr{
@@ -499,13 +493,14 @@ details summary{
   }
 }
  }
-/* .content5:hover{
-  animation: slide 1s linear 1;
+.content1:hover, .content5:hover, .content6:hover{
+  animation: fadeInAnimation 1s linear 1;
   height: 100% ;
-}  */
-.content1{
-  animation: slide 1s linear 1;
+} 
+.content1:active{
+  animation: fadeInAnimation 3s  1;
   height: 100%;
+  animation-timing-function: ease-in;
 }
 @keyframes slide{
     0%{

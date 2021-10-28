@@ -129,16 +129,32 @@ html{
     font-size: 2.5rem;
     padding: 1.2rem;
     text-align: center;
+    border: .1rem solid rgb(76, 43, 226); 
+    height: 2rem; border-radius: 5rem;
+   background: rgb(169, 118, 218);
+    color: rgb(13, 46, 3);
   }
   .page-header a:hover{
     border: .1rem solid white;
     border-radius: 4.0rem;
     background: white;
-    color: rgb(29, 29, 80);
+    color: rgb(9, 9, 51);
   }
- 
+  @keyframes slidein {
+    from {
+      transform: translateX(0%);
+    }
+    to{
+      transform: translateX(5%);
+    }
+  }
 
-
+  .content1{
+    animation: slidein;
+    animation-duration: 4s;
+    animation-fill-mode: forwards;
+    animation-timing-function: linear;
+  }
 
 
 .about-us hr{
@@ -483,11 +499,11 @@ details summary{
   }
 }
  }
-.content5:hover{
+/* .content5:hover{
   animation: slide 1s linear 1;
   height: 100% ;
-} 
-.content6:hover{
+}  */
+.content1{
   animation: slide 1s linear 1;
   height: 100%;
 }
@@ -690,4 +706,7 @@ details summary{
   .box hr{
     width: 50%;
   }
+}
+html{
+  scroll-behavior: smooth;
 }

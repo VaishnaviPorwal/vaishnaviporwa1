@@ -19,6 +19,8 @@ html{
   font-family: EB Garamond;
   font-size: 2.5rem;
   /* width: 100%; */
+  
+
 }
 .ipts1{
   font-size:1.5rem;
@@ -38,8 +40,11 @@ html{
   color:white;
   padding: 1rem;
   display:block;
+  width: 15rem;
+  
   /* width: 20%; */
 }
+
 .navbar-links li:hover{
   /* background-color: rgb(245, 239, 239); */
 }
@@ -82,6 +87,7 @@ html{
   }
   .navbar-links li a{
       padding: .5rem 1rem;
+   
   }
   .navbar-links.active{
       display: flex;
@@ -149,11 +155,11 @@ html{
     }
   }
 
-#about:hover, .about-us:active{
+/* #about:hover, .about-us:active{
   animation: slidein;
   animation-timing-function: ease-out;
   animation-duration: 5s;
-}
+} */
 
 .about-us hr{
   align-items: center;
@@ -247,8 +253,8 @@ html{
   color: white;
 }
 .outer-container > .member img:hover{
-  border: .5rem solid white;
-  border-radius: 50% ;
+  /* border: .5rem solid white;
+  border-radius: 50% ; */
   filter: grayscale(0%);
   filter: drop-shadow(1rem 1rem 2pprem black);
 }
@@ -497,7 +503,7 @@ details summary{
   }
 }
  }
-.content1:hover, .content5:hover, .content6:hover{
+/* .content1:hover, .content5:hover, .content6:hover{
   animation: fadeInAnimation 1s linear 1;
   height: 100% ;
 } 
@@ -505,7 +511,7 @@ details summary{
   animation: slidein 3s  1;
   height: 100%;
   animation-timing-function: ease-in;
-}
+} */
 @keyframes slide{
     0%{
       opacity: 0;
@@ -708,4 +714,40 @@ details summary{
 }
 html{
   scroll-behavior: smooth;
+}
+@keyframes wipe-enter{
+  0%{
+    transform: scale(0, .025);
+  }
+  50%{
+    transform: scale(1, .025);
+  }
+}
+
+.js-scroll{
+  opacity: 0;
+}
+
+@keyframes slidein {
+  from{
+    transform: translateY(25%);
+  }
+  to{
+    transform: translateY(0%);
+  }
+}
+.js-scroll.scrolled {
+  opacity: 1;
+  animation: slidein;
+  animation-duration: 1s;
+}
+
+.navbar{
+  position: fixed;
+  top: 0%;
+  width: 99%;
+  z-index: 2;
+}
+body{
+  z-index: 1;
 }

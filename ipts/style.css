@@ -470,13 +470,13 @@ details summary{
     font-size: 2rem;
   }
 }
- @media screen and (max-width: 850px) {
+ /* @media screen and (max-width: 850px) {
    .outer-container{
      display: flex;
      flex-direction: column;
    }
    
- }
+ } */
  @media screen and (min-width: 800px) {
   .project-name{
     padding: auto;
